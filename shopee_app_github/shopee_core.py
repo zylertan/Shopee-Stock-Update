@@ -143,7 +143,7 @@ def read_registry(reg_bytes):
                 vid=_nid(ws.cell(r,vc).value) if vc else ""
                 if not mid or not dec: continue
                 if dec.startswith("link") and vid: add_lock(vid,mid); summary["linked"]+=1
-                elif "not applicable" in dec: not_selling.add(mid); summary["not_selling"]+=1
+                elif "not selling" in dec or "not applicable" in dec: not_selling.add(mid); summary["not_selling"]+=1
                 elif "not on shopee" in dec: not_on_shopee.add(mid); summary["not_on_shopee"]+=1
     # apply Match Review decisions
     ws=sh("match review")
@@ -250,7 +250,7 @@ def build_registry_workbook(cls, new_ml, mlmap, not_selling, not_on_shopee, summ
         ["N","M","M","M","M","M","M","S","N","N"],
         [[i,m["id"],m["category"],m["brand"],m["model"],m["color"],m["avail"],"","",""] for i,m in enumerate(new_ml,1)],
         [5,22,10,12,30,20,12,26,22,22], edit_cols=(8,9,10), dv_col=9,
-        dv_list=["Linked (fill col H)","Not applicable","Not on Shopee yet"])
+        dv_list=["Linked (fill col H)","Not Selling in Shopee","Not on Shopee yet"])
     # Match Review (editable) — Shopee SKUs needing a match (incl. brand-new ones)
     sheet("Match Review",
         ["#","Shopee Product ID","Shopee Product Name","Variation ID","Variation Name","SKU","Current Seller Stock",
