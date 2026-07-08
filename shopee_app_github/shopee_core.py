@@ -5,7 +5,7 @@ from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 
-CORE_VERSION = "v6-notselling"
+CORE_VERSION = "v7-mm-ui"
 ACC_PRESET = 10
 
 # ---------- helpers ----------
