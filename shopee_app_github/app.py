@@ -5,6 +5,7 @@ import shopee_core as core
 
 st.set_page_config(page_title="Shopee Bulk Stock Update", page_icon="📦", layout="wide")
 st.title("📦 Shopee Bulk Stock Update")
+st.caption("build: v5 · reconciler + Not-Selling fix")
 st.caption("Reconciles your SKU registry with the Masterlist + Shopee export. Returns an updated "
            "**Shopee Match Review** sheet and two ready-to-upload Shopee files. Only **Seller Stock** changes.")
 
